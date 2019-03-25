@@ -7,7 +7,7 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
-    Please read licence file for more details.
+    Please read licence file for more information.
 """
 
 from requests.auth import HTTPBasicAuth
@@ -15,7 +15,7 @@ import requests,json
 
 class Api():
  
-    base_url = 'http://localhost:8080/api'
+    base_url = 'https://api.pivotsecurity.com/api'
     public_key = None
     private_key = None
     endpoints = { "OP_CREATE":"account/create", "OP_INFO":"account/info", "OP_RISK_SCORE":"account/riskscore", "OP_UPDATE_RISK_SCORE":"account/updateriskscore", "OP_QRCODE":"account/qrcode", "OP_AUTH_CODE":"account/authcode", "OP_LOGS":"account/logs", "OP_LOCK":"account/lock","OP_UNLOCK":"account/unlock","OP_TRAIN_ML":"account/trainml","OP_TEST_ML":"account/testml","OP_AUTH":"customer/auth","OP_VALIDATE":"customer/verify"}
