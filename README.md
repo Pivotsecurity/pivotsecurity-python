@@ -13,4 +13,4 @@ using python3
 
 python3 example.py
 
-your multi factor auth is in your control
+Read full docs: https://github.com/Pivotsecurity/pivotsecurity-python/tree/master/doc 
