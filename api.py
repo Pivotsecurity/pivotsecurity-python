@@ -18,7 +18,7 @@ class Api():
     base_url = 'https://api.pivotsecurity.com/api'
     public_key = None
     private_key = None
-    endpoints = { "OP_CREATE":"account/create", "OP_INFO":"account/info", "OP_RISK_SCORE":"account/riskscore", "OP_UPDATE_RISK_SCORE":"account/updateriskscore", "OP_QRCODE":"account/qrcode", "OP_AUTH_CODE":"account/authcode", "OP_LOGS":"account/logs", "OP_LOCK":"account/lock","OP_UNLOCK":"account/unlock","OP_TRAIN_ML":"account/trainml","OP_TEST_ML":"account/testml","OP_AUTH_META":"account/authwithmetadata","OP_AUTH_SEND_META":"account/sendauthwithmetadata","OP_VERIFY_META":"account/verifywithmetadata","OP_VERIFY_SESSION":"account/verifysession""OP_AUTH":"customer/auth","OP_VALIDATE":"customer/verify"}
+    endpoints = { "OP_CREATE":"account/create", "OP_INFO":"account/info", "OP_RISK_SCORE":"account/riskscore", "OP_UPDATE_RISK_SCORE":"account/updateriskscore", "OP_QRCODE":"account/qrcode", "OP_AUTH_CODE":"account/authcode", "OP_LOGS":"account/logs", "OP_LOCK":"account/lock","OP_UNLOCK":"account/unlock","OP_TRAIN_ML":"account/trainml","OP_TEST_ML":"account/testml","OP_AUTH_META":"account/authwithmetadata","OP_AUTH_SEND_META":"account/sendauthwithmetadata","OP_VERIFY_META":"account/verifywithmetadata","OP_VERIFY_SESSION":"account/verifysession""OP_AUTH":"customer/auth","OP_VALIDATE":"customer/verify","OP_CUST_CREATE":"customer/create"}
 
     def __init__(self, public_key='', private_key=''):
         self.private_key = private_key
@@ -89,3 +89,8 @@ class Api():
     
     def validate_auth(self, uid, email, code):
         return self.post("OP_VALIDATE", '{"uid":"' + uid + '","email":"' + email + '","code":"'+code+'"}', True, False);
+        
+    def customer_create(self, uid, email, channel):
+        return self.post("OP_CUST_CREATE", '{"uid":"' + uid + '","email":"' + email + '","channel":"'+channel+'"}', True, False);
+
+        
